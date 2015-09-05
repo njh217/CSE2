@@ -3,12 +3,12 @@
 //HW 02
 //Arithmetic Java Program
 //
-//  first compile the program
-//      javac Arithmetic.java
-//  run the program
+//  Program calculates number of each product purchased
+//      amount spent on each product and tax
+//  and total of the entire transaction
 //      java Arithmetic//
 
-//define class Arithmetic
+//declare class Arithmetic
 public class Arithmetic{
 //  add main method
   public static void main(String[] args) {
@@ -27,6 +27,8 @@ public class Arithmetic{
     double glassTax$;  //  Tax on glass
     double envelopeTax$;  //  Tax on envelopes 
     double totalTax$;  //  Total Tax
+    double transactionTotal$;  //  Total before tax
+    double transactionTotalTax$;  //  Total transcation with tax
 //Print items being bought, number bought & price
     System.out.println(nSocks + " Pairs of Socks @  $" + sockCost$ + " per pair");
     System.out.println(nGlasses + " Glasses @  $" + glassCost$ + " per glass");
@@ -34,7 +36,21 @@ public class Arithmetic{
 //Calculate total Cost of each item & tax on item 
     totalSockCost$= nSocks * sockCost$;
     sockTax$= (totalSockCost$ * taxPercent);
+    totalglassCost$= (nGlasses * glassCost$);
+    glassTax$= (totalglassCost$ * taxPercent);
+    totalenvelopeCost$= (nEnvelopes * envelopeCost$);
+    envelopeTax$= (totalenvelopeCost$ * taxPercent);
+    totalTax$= (sockTax$ + glassTax$ + envelopeTax$);
 //Print total Cost of each item & tax on item
-    System.out.printf("The total socks cost is $%,.2f%n", sockCost$ + "plus a tax of $%,.2f%n", sockTax)$; 
+    System.out.printf("The total socks cost is $%,.2f" + " plus a tax of $%,.2f%n", totalSockCost$, sockTax$);
+    System.out.printf("The total glasses cost is $%,.2f" + " plus a tax of $%,.2f%n", totalglassCost$, glassTax$);
+    System.out.printf("The total envelope cost is $%,.2f" + " plus a tax of $%,.2f%n", totalenvelopeCost$, envelopeTax$);
+//Calculate total Transcation cost
+    transactionTotal$= (totalSockCost$ + totalglassCost$ + totalenvelopeCost$);
+    transactionTotalTax$= (totalSockCost$ + totalglassCost$ + totalenvelopeCost$ + totalTax$);
+//Print total Transcation cost with and without tax
+    System.out.printf("The total transcation cost before tax is $%,.2f%n", transactionTotal$);
+    System.out.printf("The total sales tax is $%,.2f%n", totalTax$);
+    System.out.printf("The total transcation cost including tax is $%,.2f%n", transactionTotalTax$);
      }
   }
