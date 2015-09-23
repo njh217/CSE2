@@ -10,7 +10,7 @@ import java.util.Scanner;  //import scanner
 
 public class Check{
     // main method required for every Java program
-    public static void main(String[] args) {
+    
     
     Scanner myScanner = new Scanner( System.in );  //consruct the instance of scanner 
     System.out.print("Enter the original cost of the check in the form xx.xx: ");
