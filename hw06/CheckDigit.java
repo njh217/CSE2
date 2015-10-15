@@ -14,6 +14,7 @@ public class CheckDigit{
     public static void main(String[] args) {
 //Declare and intilize variables here to avoid scope CEs 
 int isbnVal = 0;
+char x = '10';
 String isbnValString = "";
 int digit1 = 0, digit2 = 0, digit3 = 0, digit4 = 0, digit5 = 0, digit6 = 0, digit7 = 0, digit8 = 0, digit9 = 0, digit10 = 0;
     Scanner myScanner = new Scanner( System.in );  //consruct the instance of scanner
