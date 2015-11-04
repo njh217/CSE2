@@ -21,7 +21,7 @@ public class Shuffling{
 String[] rankNames={"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q","K","A"};
 String[] cards = new String[52];
 String[] hand = new String[5];
-for (int i=0; i<52; i++){
+for (int i=0; i<52; i++){ //creat array for cards
   cards[i]=rankNames[i%13]+suitNames[i/13];
 }
 printArray(cards);
@@ -36,12 +36,12 @@ printArray(hand);
 // method to shuffle deck
 public static void shuffle( String[] cards ){
     for (int i=0; i<cards.length; i++) {
-	//find a random member to swap with
+	//find a random card to swap with
 	    int target = (int) (cards.length * 
 		Math.random() );
 
 
-	    //swap the values
+	    //swap the card values
 	    String temp = cards[target];
 	    cards[target] = cards[i];
 	    cards[i] = temp;
@@ -49,7 +49,7 @@ public static void shuffle( String[] cards ){
     //return cards;
 }
 
-// method to draw random handfrom huffled deck
+// method to draw random handfrom shuffled deck
 public static String[] randomizeHand( String[] cards ){
     for (int i=0; i<cards.length; i++) {
 	//find a random member to swap with
@@ -64,14 +64,13 @@ public static String[] randomizeHand( String[] cards ){
     }
     String[] handArray = new String[5];
     for(int i = 0; i < 5; i++){
-    handArray[i] = cards[i];
+    handArray[i] = cards[i];  //create an array made of 5 random cards
 }
     return handArray;
 }
 
 // method to print hand drawn 
 public static void printArray( String[] list ){
-    //method one: using for loop
     for(int i = 0; i < list.length; i++)
     {
      System.out.print(list[i] + " ");   
