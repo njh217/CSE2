@@ -23,6 +23,7 @@ boolean increaseCheck = false;
 
 System.out.print("Please enter 5 doubles smallest to largest:  ");
 Scanner myScanner = new Scanner( System.in );
+
 while(increaseCheck == false){
 var1 = myScanner.nextDouble();
 System.out.print(" ");
@@ -31,7 +32,7 @@ System.out.print(" ");
 var3 = myScanner.nextDouble();
 System.out.print(" ");
 var4 = myScanner.nextDouble();
-System.out.print(" ");
+System.out.print("");
 var5 = myScanner.nextDouble();
 
 if( var1 > var2 || var2 > var3 || var3 > var4 || var4 > var5 ){
@@ -42,5 +43,33 @@ else{
     increaseCheck = true;
 }
 }
+
+double meanVal = Mean(var1, var2, var3, var4, var5);
+System.out.print("The mean value is equal to: ");
+Print(meanVal);
+System.out.println();
+double medVal = Median(var3);
+System.out.print("The median value is equal to: ");
+Print(medVal);
+System.out.println();
     }
+    
+//method to find mean
+    public static double Mean(double var1, double var2, double var3, double var4, double var5){
+        double mean = (var1 + var2 + var3 + var4 + var5) / 5;
+        return mean;
+    }
+    
+//method to find median
+    public static double Median(double var3){
+        return var3;
+    }
+    
+// print method
+    public static void Print(double val){
+        System.out.print(val);
+    }
+
+
+
 }
